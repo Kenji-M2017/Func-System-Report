@@ -11,7 +11,7 @@
 ```
 $ sudo apt install ros-melodic-joint-state-publisher-gui
 ```
-以下のコマンドを実行する.
+以下のコマンドを実行する.  
 端末1
 ```
 $ roslaunch sixdofarm sixdofarm.launch
@@ -26,7 +26,7 @@ $ rosrun rviz rviz
 joint_state_publisherのGUIの各項目を調整することで,6自由度マニピュレーションモデルの関節角が変化することを確認できる.
 
 ### Moveit上での6自由度のマニピュレーションモデルの制御
-以下のコマンドを実行する.
+以下のコマンドを実行する.  
 端末
 ```
 $ roslaunch sixdofarm_moveit_config demo.launch
@@ -38,7 +38,7 @@ $ roslaunch sixdofarm_moveit_config demo.launch
 計画と実行を同時に行う場合,「Plan&Execute」をクリックする.
 
 ### Gazebo上での6自由度のマニピュレーションモデルの表示
-以下のコマンドを実行する.
+以下のコマンドを実行する.  
 端末
 ```
 $ roslaunch sixdofarm_gazebo sixdofarm.launch
@@ -46,7 +46,7 @@ $ roslaunch sixdofarm_gazebo sixdofarm.launch
 実行することで,Rvizで表示された6自由度のマニピュレーションモデルが表示される.
 
 ### 6自由度マニピュレーションモデルのros_controlでの制御
-以下のコマンドを実行する.
+以下のコマンドを実行する.  
 端末1
 ```
 $ roslaunch sixdofarm_gazebo sixdofarm.launch
