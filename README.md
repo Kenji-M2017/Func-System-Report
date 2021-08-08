@@ -27,7 +27,7 @@ joint_state_publisherのGUIの各項目を調整することで,6自由度マニ
 
 ### Moveit上での6自由度のマニピュレーションモデルの制御
 以下のコマンドを実行する.  
-端末
+端末1
 ```
 $ roslaunch sixdofarm_moveit_config demo.launch
 ```
@@ -39,7 +39,7 @@ $ roslaunch sixdofarm_moveit_config demo.launch
 
 ### Gazebo上での6自由度のマニピュレーションモデルの表示
 以下のコマンドを実行する.  
-端末
+端末1
 ```
 $ roslaunch sixdofarm_gazebo sixdofarm.launch
 ```
@@ -88,11 +88,11 @@ rqtで指令値を送るため,以下の手順を行う.
 「rate」:100
 「expression」:sin(i/100*5)*1.7 + 0
 
-これらの項目を変更することで,関節1が以下のパラメータに従って動作することをGazebo上で確認できる.
-rate:100[hz]
-speed:5
-diff:1.7[rad]
-offset:0[rad]
+これらの項目を変更することで,関節1が以下のパラメータに従って動作することをGazebo上で確認できる.  
+rate:100[hz]  
+speed:5  
+diff:1.7[rad]  
+offset:0[rad]  
 
 以下の手順で,動作の様子をrqtのモニターで確認する.
 1. rqtの上部にある「Plugins」->「Visualization」->「Plot」を選択して追加する.
@@ -105,7 +105,7 @@ offset:0[rad]
 
 ### MoveitとGazeboの接続
 以下のコマンドを実行する.  
-端末
+端末1
 ```
 $ roslaunch sixdofarm_moveit_config sixdofarm_moveit.launch
 ```
@@ -113,7 +113,7 @@ $ roslaunch sixdofarm_moveit_config sixdofarm_moveit.launch
 
 ### Gazebo上で構築した4輪移動ロボットモデルの表示
 以下のコマンドを実行する.  
-端末
+端末1
 ```
 $ roslaunch wheel_robot wheel_robot.launch
 ```
@@ -215,7 +215,7 @@ $ roslaunch diff_mobile_robot diff_mobile_gazebo.launch
 
 ### Gazebo上の差動2輪移動ロボットによる地図の作成
 下記コマンドを実行し,gmappingのインストールを行う.  
-端末
+端末1
 ```
 $ sudo apt-get install ros-kinetic-gmapping
 ```
