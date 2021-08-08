@@ -206,7 +206,7 @@ $ rviz rviz
 ```
 Rvizの「Fixed Frame」を「map」->「base_link」にし,「Add」から「RobotModel」を選択・追加する.
 次に,以下のコマンドを実行する.  
-端末
+端末1
 ```
 $ roslaunch diff_mobile_robot diff_mobile_gazebo.launch
 ```
