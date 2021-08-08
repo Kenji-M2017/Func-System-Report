@@ -51,24 +51,24 @@ $ roslaunch sixdofarm_gazebo sixdofarm.launch
 ```
 $ roslaunch sixdofarm_gazebo sixdofarm.launch
 ```
-Gazeboが起動した後,以下のコマンドを実行する.
+Gazeboが起動した後,以下のコマンドを実行する.  
 端末2
 ```
 $ roslaunch sixdofarm_control sixdofarm_control.launch
 ```
-以下のコマンドで,「関節2」に「1.5rad」動かす指令を送る.
+以下のコマンドで,「関節2」に「1.5rad」動かす指令を送る.  
 端末3
 ```
 $ rostopic pub -1 /sixdofarm/joint2_position_controller/command std_msgs/Float64 "data: 1.5"
 ```
 
 ### rqtとdynamic reconfigureによるPID制御ゲインの調整
-以下のコマンドを実行する.
+以下のコマンドを実行する.  
 端末1
 ```
 $ roslaunch sixdofarm_gazebo sixdofarm.launch
 ```
-Gazeboが起動した後,以下のコマンドを実行する.
+Gazeboが起動した後,以下のコマンドを実行する.  
 端末2
 ```
 $ roslaunch sixdofarm_control sixdofarm_control.launch
@@ -104,7 +104,7 @@ offset:0[rad]
 4. 追加後,joint1のPIDゲインを調整し,所望する範囲に収まるように調整する.
 
 ### MoveitとGazeboの接続
-以下のコマンドを実行する.
+以下のコマンドを実行する.  
 端末
 ```
 $ roslaunch sixdofarm_moveit_config sixdofarm_moveit.launch
@@ -112,7 +112,7 @@ $ roslaunch sixdofarm_moveit_config sixdofarm_moveit.launch
 「Moveit上での6自由度のマニピュレーションモデルの制御」の項と同様に,軌道の生成・実行することで,Gazebo上で計画した軌道に従って動作することが確認できる.
 
 ### Gazebo上で構築した4輪移動ロボットモデルの表示
-以下のコマンドを実行する.
+以下のコマンドを実行する.  
 端末
 ```
 $ roslaunch wheel_robot wheel_robot.launch
@@ -121,7 +121,7 @@ $ roslaunch wheel_robot wheel_robot.launch
 また,Rvizを立ち上げ,robot modelとTFを追加することで,Rviz上で4輪の移動ロボットが表示される.
 
 ### 4輪移動ロボットのコントロール
-以下のコマンドを実行する.
+以下のコマンドを実行する.  
 端末1
 ```
 $ roslaunch wheel_robot wheel_robot_control.launch
@@ -134,7 +134,7 @@ rqtを立ち上げた後,「Plugins」->「Robot Tools」->「Robot Steering」�
 縦軸は前後の速度指令,横軸は旋回角加速度の指令を行える.ツールバーを動かすことで,RvizとGazeboの両方で移動ロボットが動作することが確認できる.
 
 ### Gazebo上の移動の軌跡の保存
-以下のコマンドを実行する.
+以下のコマンドを実行する.  
 端末1
 ```
 $ roslaunch wheel_robot wheel_robot_control.launch
@@ -153,7 +153,7 @@ $ rqt
 rosrun odom_listener odom_listenerを実行したディレクトリ内に保存されている.
 
 ### 保存した軌跡の追従
-以下のコマンドを実行することで追従を行えることを確認する.実行する前に,mapのディレクトリに適当なpgmファイル(ASCII形式)を保存し,waypointsのディレクトリに保存した軌跡を置いておく.
+以下のコマンドを実行することで追従を行えることを確認する.実行する前に,mapのディレクトリに適当なpgmファイル(ASCII形式)を保存し,waypointsのディレクトリに保存した軌跡を置いておく.  
 端末1
 ```
 $ roslaunch wheel_robot wheel_robot_control.launch
@@ -168,6 +168,7 @@ Rvizの画面の「Add」を押し,「By topic」->「visualization_marker」->�
 最後に,「Add」を押し,「By topic」->「NavfnROS」->「plan」->「Path」を選択・追加して,ゴールまでの計画経路を表示する.
 
 ### Gazebo上の4輪移動ロボットによる地図の作成
+以下のコマンドを実行する.  
 端末1
 ```
 $ roslaunch wheel_robot wheel_robot.launch
@@ -194,7 +195,7 @@ $ rosrun map_server map_saver -f test  (testは任意のファイル名)
 ```
 
 ### Gazebo上で構築した差動2輪の表示&Willow Garageの生成
-以下のコマンドを実行する.
+以下のコマンドを実行する.  
 端末1
 ```
 $ roslaunch diff_mobile_robot diff_mobile_robot.launch
@@ -204,7 +205,7 @@ $ roslaunch diff_mobile_robot diff_mobile_robot.launch
 $ rviz rviz
 ```
 Rvizの「Fixed Frame」を「map」->「base_link」にし,「Add」から「RobotModel」を選択・追加する.
-次に,以下のコマンドを実行する.
+次に,以下のコマンドを実行する.  
 端末
 ```
 $ roslaunch diff_mobile_robot diff_mobile_gazebo.launch
@@ -213,12 +214,12 @@ $ roslaunch diff_mobile_robot diff_mobile_gazebo.launch
 また,rqtを用いて移動ロボットがコントロールできるか確認する.
 
 ### Gazebo上の差動2輪移動ロボットによる地図の作成
-下記コマンドを実行し,gmappingのインストールを行う.
+下記コマンドを実行し,gmappingのインストールを行う.  
 端末
 ```
 $ sudo apt-get install ros-kinetic-gmapping
 ```
-以下のコマンドを実行する.
+以下のコマンドを実行する.  
 端末1
 ```
 $ roslaunch diff_mobile_robot diff_mobile_gazebo.launch
@@ -232,7 +233,7 @@ $ roslaunch diff_mobile_robot gmapping.launch
 $ rqt
 ```
 rqtを用いて差動2輪ロボットを動かすことで,地図が更新されていく.この様子は,RvizでmapをAddしておくことで確認することが確認できる.
-地図が生成できた後に,地図を保存したいディレクトリに移動し,以下のコマンドで保存する.
+地図が生成できた後に,地図を保存したいディレクトリに移動し,以下のコマンドで保存する.  
 端末4
 ```
 $ rosrun map_server map_saver -f testmap  (testmapは任意のファイル名)
@@ -240,7 +241,7 @@ $ rosrun map_server map_saver -f testmap  (testmapは任意のファイル名)
 
 ### AMCLでの差動2輪移動ロボットの自己位置推定
 mapのディレクトリに先程作成した地図を保存する.
-以下のコマンドを実行する.
+以下のコマンドを実行する.  
 端末1
 ```
 $ roslaunch diff_mobile_robot diff_mobile_gazebo.launch
@@ -260,7 +261,7 @@ $ rqt
 rviz内で「Add」より「By display type」の「RobotModel」と「Map」,「By topic」の「particlecloud」->「PoseArray」を選択・追加することで,ロボットの移動に伴い,amclによる位置推定の様子が行われていることを確認できる.
 
 ### 差動2輪移動ロボットの保存した軌跡の追従
-以下のコマンドを実行し,所望する軌道を保存する.
+以下のコマンドを実行し,所望する軌道を保存する.  
 端末1
 ```
 $ roslaunch diff_mobile_robot diff_mobile_gazebo.launch
@@ -281,7 +282,7 @@ $ rqt
 ```
 $ rosrun odom_listener odom_listener
 ```
-次に,以下のコマンドを実行することで,保存した軌跡の追従を行えることを確認する.このコマンドを実行する前に,waypointsのディレクトリに保存した軌跡に置いておく.
+次に,以下のコマンドを実行することで,保存した軌跡の追従を行えることを確認する.このコマンドを実行する前に,waypointsのディレクトリに保存した軌跡に置いておく.  
 端末1
 ```
 $ roslaunch diff_mobile_robot diff_mobile_gazebo.launch
